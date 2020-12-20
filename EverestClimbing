@@ -1,0 +1,52 @@
+function solve(args) {
+    let input = args;
+
+    let currentDay = 1;
+    let currentHeight = 5364;
+
+    let row = 0;
+
+    let output = "";
+
+    while (true) {
+        if (currentDay >= 5 || currentHeight >= 8848 || input[row] == "END") {
+            if (currentHeight >= 8848) {
+                output = "Goal reached for " + currentDay + " days!";
+                break;
+            } else {
+                output = "Failed!\n" + currentHeight;
+                break;
+            }
+        } else {
+            if (input[row][0] == "Yes") {
+                currentDay += 1;
+                currentHeight += parseInt(input[row][1]);
+            } else if (input[row][0] == "No") {
+                currentHeight += parseInt(input[row][1]);
+            }
+        }
+
+        row += 1;
+    }
+
+    console.log(output);
+}
+
+solve([
+    ["Yes", 1254],
+    ["Yes", 1402],
+    ["No", 250],
+    ["Yes", 635],
+]);
+
+solve([["Yes", 1000], ["Yes", 945], ["No", 1200], "END"]);
+
+solve([
+    ["Yes", 535],
+    ["Yes", 849],
+    ["Yes", 499],
+    ["Yes", 400],
+    ["Yes", 500],
+]);
+
+solve([["Yes", 700], "END"]);

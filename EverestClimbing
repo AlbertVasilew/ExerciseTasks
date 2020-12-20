@@ -32,6 +32,7 @@ function solve(args) {
     console.log(output);
 }
 
+//Test 1
 solve([
     ["Yes", 1254],
     ["Yes", 1402],
@@ -39,8 +40,10 @@ solve([
     ["Yes", 635],
 ]);
 
+//Test2
 solve([["Yes", 1000], ["Yes", 945], ["No", 1200], "END"]);
 
+//Test3
 solve([
     ["Yes", 535],
     ["Yes", 849],
@@ -49,4 +52,5 @@ solve([
     ["Yes", 500],
 ]);
 
+//Test4
 solve([["Yes", 700], "END"]);
